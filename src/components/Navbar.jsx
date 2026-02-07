@@ -309,20 +309,11 @@ export default function Navbar() {
 
   return (
     <nav className="navbar glass">
+      {/* LEFT */}
       <h2 className="logo">Tarun</h2>
 
-      {/* 🍔 RIGHT SIDE HAMBURGER */}
-      <div
-        className={`hamburger ${open ? "open" : ""}`}
-        onClick={() => setOpen(!open)}
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-      {/* 👉 RIGHT SLIDE MENU */}
-      <ul className={`nav-links drawer ${open ? "show" : ""}`}>
+      {/* CENTER / DESKTOP LINKS */}
+      <ul className={`nav-links ${open ? "show" : ""}`}>
         {["home", "about", "skills", "projects", "contact"].map((item) => (
           <li key={item}>
             <a
@@ -335,6 +326,16 @@ export default function Navbar() {
           </li>
         ))}
       </ul>
+
+      {/* RIGHT */}
+      <div
+        className={`hamburger ${open ? "open" : ""}`}
+        onClick={() => setOpen(!open)}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </nav>
   );
 }

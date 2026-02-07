@@ -11,7 +11,7 @@ export default function Contact() {
       </p>
 
       <div className="contact-row">
-        <a href="mailto:yourmail@gmail.com" className="contact-item">
+        <a href="mailto:negit526@gmail.com" className="contact-item">
           <MdEmail />
           <span>Email</span>
         </a>
@@ -26,7 +26,7 @@ export default function Contact() {
         </a>
 
         <a
-          href="https://github.com/yourusername"
+          href="https://github.com/Tarunnegi-2003"
           target="_blank"
           className="contact-item"
         >
@@ -34,7 +34,7 @@ export default function Contact() {
           <span>GitHub</span>
         </a>
 
-        <a href="tel:+91XXXXXXXXXX" className="contact-item">
+        <a href="tel:+916395745408" className="contact-item">
           <FaPhoneAlt />
           <span>Call</span>
         </a>

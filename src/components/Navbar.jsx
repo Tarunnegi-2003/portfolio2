@@ -169,6 +169,62 @@
 //   );
 // }
 
+// import { useEffect, useState } from "react";
+// import "../index.css";
+
+// export default function Navbar() {
+//   const [active, setActive] = useState("home");
+//   const [open, setOpen] = useState(false);
+
+//   useEffect(() => {
+//     const sections = document.querySelectorAll("section");
+
+//     const onScroll = () => {
+//       let current = "";
+//       sections.forEach((sec) => {
+//         const top = sec.offsetTop - 120;
+//         if (window.scrollY >= top) {
+//           current = sec.getAttribute("id");
+//         }
+//       });
+//       setActive(current);
+//     };
+
+//     window.addEventListener("scroll", onScroll);
+//     return () => window.removeEventListener("scroll", onScroll);
+//   }, []);
+
+//   return (
+//     <nav className="navbar glass">
+//       <h2 className="logo">Tarun</h2>
+
+//       {/* 🍔 Hamburger (sirf mobile) */}
+//       <div
+//         className={`hamburger ${open ? "open" : ""}`}
+//         onClick={() => setOpen(!open)}
+//       >
+//         <span></span>
+//         <span></span>
+//         <span></span>
+//       </div>
+
+//       <ul className={`nav-links ${open ? "show" : ""}`}>
+//         {["home", "about", "skills", "projects", "contact"].map((item) => (
+//           <li key={item}>
+//             <a
+//               href={`#${item}`}
+//               className={active === item ? "active" : ""}
+//               onClick={() => setOpen(false)}
+//             >
+//               {item.charAt(0).toUpperCase() + item.slice(1)}
+//             </a>
+//           </li>
+//         ))}
+//       </ul>
+//     </nav>
+//   );
+// }
+
 import { useEffect, useState } from "react";
 import "../index.css";
 
@@ -180,7 +236,7 @@ export default function Navbar() {
     const sections = document.querySelectorAll("section");
 
     const onScroll = () => {
-      let current = "";
+      let current = "home";
       sections.forEach((sec) => {
         const top = sec.offsetTop - 120;
         if (window.scrollY >= top) {
@@ -196,9 +252,10 @@ export default function Navbar() {
 
   return (
     <nav className="navbar glass">
+      {/* LOGO */}
       <h2 className="logo">Tarun</h2>
 
-      {/* 🍔 Hamburger (sirf mobile) */}
+      {/* 🍔 HAMBURGER (mobile only) */}
       <div
         className={`hamburger ${open ? "open" : ""}`}
         onClick={() => setOpen(!open)}
@@ -208,6 +265,7 @@ export default function Navbar() {
         <span></span>
       </div>
 
+      {/* NAV LINKS */}
       <ul className={`nav-links ${open ? "show" : ""}`}>
         {["home", "about", "skills", "projects", "contact"].map((item) => (
           <li key={item}>

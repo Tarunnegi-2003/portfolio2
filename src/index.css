@@ -53,24 +53,20 @@ body {
 }
 
 /* NAVBAR */
-/* =====================
-   NAVBAR BASE
-===================== */
-
+/* NAVBAR */
 .navbar {
   position: sticky;
   top: 0;
-  z-index: 100;
-  padding: 18px 30px;
+  z-index: 999;
+  padding: 18px 24px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
 
 .glass {
-  background: rgba(2, 6, 23, 0.7);
+  background: rgba(2, 6, 23, 0.75);
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .logo {
@@ -78,32 +74,25 @@ body {
   font-weight: bold;
 }
 
-/* =====================
-   NAV LINKS (DESKTOP)
-===================== */
-
+/* DESKTOP */
 .nav-links {
-  list-style: none;
   display: flex;
   gap: 30px;
-  padding: 0;
-  margin: 0;
+  list-style: none;
 }
 
 .nav-links a {
-  text-decoration: none;
   color: white;
+  text-decoration: none;
   position: relative;
-  padding-bottom: 4px;
 }
 
-/* active underline */
 .nav-links a::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: -6px;
-  width: 0%;
+  width: 0;
   height: 2px;
   background: #38bdf8;
   transition: 0.3s;
@@ -114,23 +103,18 @@ body {
   width: 100%;
 }
 
-/* =====================
-   🍔 HAMBURGER
-===================== */
-
+/* 🍔 HAMBURGER */
 .hamburger {
   display: none;
   flex-direction: column;
   gap: 6px;
   cursor: pointer;
-  margin-left: auto; /* RIGHT SIDE */
 }
 
 .hamburger span {
   width: 26px;
   height: 3px;
   background: white;
-  border-radius: 4px;
   transition: 0.3s;
 }
 
@@ -145,33 +129,33 @@ body {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
-/* =====================
-   📱 MOBILE NAVBAR
-===================== */
-
+/* 📱 MOBILE RIGHT DRAWER */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
   }
 
   .nav-links {
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-
-    background: rgba(2, 6, 23, 0.95);
-    backdrop-filter: blur(14px);
-
-    flex-direction: column;
-    align-items: center;
-    gap: 22px;
-    padding: 25px 0;
-
     display: none;
   }
 
-  .nav-links.show {
+  .nav-links.drawer {
+    position: fixed;
+    top: 0;
+    right: -260px;
+    height: 100vh;
+    width: 240px;
+    background: rgba(2, 6, 23, 0.95);
+    backdrop-filter: blur(16px);
+    flex-direction: column;
+    padding-top: 100px;
+    gap: 24px;
+    align-items: center;
+    transition: 0.4s ease;
+  }
+
+  .nav-links.drawer.show {
+    right: 0;
     display: flex;
   }
 }
